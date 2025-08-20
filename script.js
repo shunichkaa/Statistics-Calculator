@@ -1,3 +1,4 @@
-const calculate = function() {
-  const value = document.querySelector('#numbers').value;
+const calculate = () => {
+  const value = document.querySelector("#numbers").value;
+  const array = value.split(/,\s*/g);
 };
