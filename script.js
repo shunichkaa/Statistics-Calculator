@@ -1,6 +1,6 @@
 const getMean = (array) => {
-  const sum = array.reduce();
-}
+  const sum = array.reduce((acc, el) => acc + el);
+};
 
 const calculate = () => {
   const value = document.querySelector("#numbers").value;
