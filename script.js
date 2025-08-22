@@ -1,23 +1,29 @@
-const getMean = (array) => array.reduce((acc, el) => acc + el, 0) / array.length;
-
-const testArr1 = [1, 2, 3, 4, 5];
-const testArr2 = [1, 2, 3, 4, 5, 6];
-const isEven = testArr2.length % 2 === 0;
-console.log(isEven);
-const oddListMedian = testArr1[Math.floor(testArr1.length / 2)];
-console.log(oddListMedian);
-const evenListMedian = getMean([testArr2[testArr2.length / 2 - 1], testArr2[testArr2.length / 2]]);
-console.log(evenListMedian);
-const getMedian = (array) => {
-  const sorted = array.sort((a, b) => a - b);
+function getMean(arr) {
+  return arr.reduce((a, b) => a + b, 0) / arr.length;
 }
 
-const calculate = () => {
-  const value = document.querySelector("#numbers").value;
-  const array = value.split(/,\s*/g);
-  const numbers = array.map(el => Number(el)).filter(el => !isNaN(el));
-  
-  const mean = getMean(numbers);
+function getMedian(array) {
+  const sorted = array.sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
 
-  document.querySelector("#mean").textContent = mean;
+  if (sorted.length % 2 === 0) {
+    return getMean([sorted[mid - 1], sorted[mid]]);
+  } else {
+    return sorted[mid];
+  }
+}
+
+function calculate() {
+  const array = document.querySelector("#numbers").value
+    .split(/,\s*/g)
+    .map(Number)
+    .filter(el => !isNaN(el));
+
+  if (array.length === 0) return;
+
+  const mean = getMean(array);
+  const median = getMedian(array);
+
+  document.querySelector("#mean").textContent = mean.toFixed(2);
+  document.querySelector("#median").textContent = median;
 }
