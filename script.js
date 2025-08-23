@@ -9,14 +9,19 @@ const getMedian = (array) => {
   return median;
 }
 
+const getMode = (array) => {
+
+}
+
+
 const calculate = () => {
   const value = document.querySelector("#numbers").value;
   const array = value.split(/,\s*/g);
   const numbers = array.map(el => Number(el)).filter(el => !isNaN(el));
+  
+  const mean = getMean(numbers);
+  const median = getMedian(numbers);
 
-const mean = getMean(numbers);
-document.querySelector("#mean").textContent = mean.toFixed(2);
-
-const median = getMedian(numbers);
-document.querySelector("#median").textContent = median;
+  document.querySelector("#mean").textContent = mean;
+  document.querySelector("#median").textContent = median;
 }
