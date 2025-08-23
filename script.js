@@ -8,9 +8,8 @@ const getMedian = (array) => {
       : sorted[Math.floor(sorted.length / 2)];
   return median;
 }
-
 const getMode = (array) => {
-
+  const counts = {}
 }
 
 
