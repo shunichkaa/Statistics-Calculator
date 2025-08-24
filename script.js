@@ -26,6 +26,9 @@ const getMode = (array) => {
   return mode.join(", ");
 }
 
+const getRange = (array) => {
+  return Math.max(...array) - Math.min(...array);
+};
 
 
 const calculate = () => {
