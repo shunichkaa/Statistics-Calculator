@@ -27,7 +27,7 @@ const getMode = (array) => {
     (el) => counts[el] === counts[highest]
   );
 
-  return mode.length === 1 ? mode[0] : mode;
+  return mode.join(", ");
 };
 
 
