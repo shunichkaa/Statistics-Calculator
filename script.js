@@ -36,7 +36,8 @@ const getVariance = (array) => {
     const difference = el - mean;
     const squared = difference ** 2;
     return acc + squared;
-  }, 0);
+  }, 0) / array.length;
+  return variance;
 };
 
 const calculate = () => {
